@@ -1,3 +1,4 @@
+
 """
 URL configuration for storefront project.
 
@@ -16,9 +17,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Include the `playground` URL configuration
     path('playground/', include('playground.urls')),
+    # Include the `debug_toolbar` URL configuration
+    path('__debug__/', include('debug_toolbar.urls')),
+
 ]
